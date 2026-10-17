@@ -5,6 +5,35 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite-ts-vue App</title>
+
+    <script>
+      (function () {
+        const search = window.location.search
+
+        if (search.startsWith('?/')) {
+          const restored = search
+            .slice(2)
+            .replace(/~and~/g, '&')
+
+          const queryIndex = restored.indexOf('&')
+          const path = queryIndex === -1
+            ? restored
+            : restored.slice(0, queryIndex)
+
+          const query = queryIndex === -1
+            ? ''
+            : '?' + restored.slice(queryIndex + 1)
+
+          const base = '/vue-ts-project/'
+
+          window.history.replaceState(
+            null,
+            '',
+            base + path + query + window.location.hash
+          )
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="app"></div>
