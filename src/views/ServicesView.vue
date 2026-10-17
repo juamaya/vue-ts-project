@@ -125,7 +125,7 @@ const servicios: Servicio[] = [
                  hover:-translate-y-1 hover:shadow-xl"
         >
           <!-- Imagen -->
-          <div class="aspect-[16/10] overflow-hidden bg-gray-100">
+          <div class="aspect-16/10 overflow-hidden bg-gray-100">
             <img
               :src="servicio.imagen"
               :alt="servicio.titulo"
