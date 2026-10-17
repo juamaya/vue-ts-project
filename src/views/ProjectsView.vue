@@ -3,25 +3,25 @@ import Card from '../components/Card.vue'
 
 const proyectos = [
  {
-    titulo: 'Documentacion  web',
+    titulo: ' Mi Web de Documentacion ',
     imagen: `${import.meta.env.BASE_URL}images/mydoc.png`,
     descripcion:
-      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+      'Docusaurus es un generador de sitios estáticos de código abierto creado y mantenido por Meta, diseñado para crear, desplegar y mantener sitios web de documentación de forma rápida y sencilla.',
     enlace: 'https://juamaya.github.io/mydoc/',
   },
 
   {
-    titulo: 'Mi Portafolio',
+    titulo: 'Mi Web  Portafolio',
     imagen: `${import.meta.env.BASE_URL}images/portafolio.png`,
     descripcion:
-      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+     'Un portafolio (o portfolio) es una recopilación organizada de los mejores proyectos, obras o trabajos de un profesional o creador con el fin de mostrar su talento, experiencia y habilidades a clientes o empresas.',
     enlace: 'https://juamaya.github.io/portafolio-juan',
   },
   {
-    titulo: 'Web de repositorios',
+    titulo: 'Mi Web de repositorios',
     imagen: `${import.meta.env.BASE_URL}images/app-repo.png`,
     descripcion:
-      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+      'Aplicacion Web que consume la API de GitHub para mostrar los repositorios publicados en GitHub Pages de un usuario, permitiendo a los visitantes explorar y acceder a los proyectos de manera sencilla.',
     enlace: 'https://juamaya.github.io/web-repositorios',
   },
 
@@ -29,7 +29,7 @@ const proyectos = [
     titulo: 'Mi GitHub',
     imagen: `${import.meta.env.BASE_URL}images/github.png`,
     descripcion:
-      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+    ' Es una plataforma en la nube para alojar código fuente y proyectos que usan el sistema de control de versiones Git.',
     enlace: 'https://github.com/juamaya',
   },
 
@@ -37,32 +37,26 @@ const proyectos = [
     titulo: 'Mi Canal de YouTube',
     imagen: `${import.meta.env.BASE_URL}images/youtube.jpg`,
     descripcion:
-      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+      'Disfruta de los vídeos y la música que te gustan, sube material original y comparte el contenido con tus amigos, tu familia y el resto del mundo en YouTube.',
     enlace: 'https://www.youtube.com/@juamaya1969',
   },
 
 
   {
-    titulo: 'Diseño web',
-    imagen: `${import.meta.env.BASE_URL}images/next.jpg`,
+    titulo: 'Consumir API REST',
+    imagen: `${import.meta.env.BASE_URL}images/Pokemones.png`,
     descripcion:
-      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
-    enlace: '/servicios',
+      'Consumir una API significa escribir un programa que envía una solicitud HTTP a un servidor externo para obtener, enviar, modificar o eliminar datos (generalmente en formato JSON)',
+    enlace: 'https://juamaya.github.io/api-pokemon-js/',
   },
   {
-    titulo: 'Desarrollo Vue',
-    imagen: `${import.meta.env.BASE_URL}images/node.jpg`,
+    titulo: 'Consumir API REST',
+    imagen: `${import.meta.env.BASE_URL}images/morty.png`,
     descripcion:
-      'Aplicaciones web rápidas y dinámicas con Vue 3 y TypeScript.',
-    enlace: '/proyectos',
+      'Consumir una API significa escribir un programa que envía una solicitud HTTP a un servidor externo para obtener, enviar, modificar o eliminar datos (generalmente en formato JSON)',
+    enlace: 'https://juamaya.github.io/morty',
   },
-  {
-    titulo: 'Diseño responsive',
-    imagen: `${import.meta.env.BASE_URL}images/Vite.jpg`,
-    descripcion:
-      'Experiencias optimizadas para móviles, tablets y escritorio.',
-    enlace: '/contacto',
-  },
+ 
 ]
  
 </script>

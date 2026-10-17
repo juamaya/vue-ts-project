@@ -4,8 +4,8 @@
 
 <template>
   <main class="min-h-screen  " >
-    <h1 class="text-3xl font-bold text-black" >Welcome to   Vue.js + TypeScript + Tailwind CSS App</h1>
-
+    <h1 class="text-4xl font-bold text-indigo-600" >Welcome to  My  App</h1>
+    <h1 class="text-2xl font-bold text-black" >  Vue.js + TypeScript + Tailwind CSS  </h1>
 <img
       :src="logo"
       alt="Nuestro equipo trabajando"
