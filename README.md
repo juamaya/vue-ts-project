@@ -430,7 +430,7 @@ En el archivo index.html de la raíz del proyecto,
 
 ```sh
 git add .
-git commit -m "Actualizar proyecto Vue"
+git commit -m " Actualizar  proyecto Vue"
 git push origin main
 ```
  

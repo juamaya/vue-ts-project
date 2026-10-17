@@ -11,11 +11,34 @@ const proyectos = [
   },
 
   {
-    titulo: 'Portafolio  web',
+    titulo: 'Mi Portafolio',
+    imagen: `${import.meta.env.BASE_URL}images/portafolio.png`,
+    descripcion:
+      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+    enlace: 'https://juamaya.github.io/portafolio-juan',
+  },
+  {
+    titulo: 'Web de repositorios',
     imagen: `${import.meta.env.BASE_URL}images/app-repo.png`,
     descripcion:
       'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
     enlace: 'https://juamaya.github.io/web-repositorios',
+  },
+
+   {
+    titulo: 'Mi GitHub',
+    imagen: `${import.meta.env.BASE_URL}images/github.png`,
+    descripcion:
+      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+    enlace: 'https://github.com/juamaya',
+  },
+
+    {
+    titulo: 'Mi Canal de YouTube',
+    imagen: `${import.meta.env.BASE_URL}images/youtube.jpg`,
+    descripcion:
+      'Diseños modernos, atractivos y adaptados a cualquier dispositivo.',
+    enlace: 'https://www.youtube.com/@juamaya1969',
   },
 
 

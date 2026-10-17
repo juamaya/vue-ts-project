@@ -11,7 +11,7 @@ defineProps<{
 <template>
   <article
     class="group flex h-full min-w-0 flex-col overflow-hidden
-           rounded-2xl border border-gray-200 bg-white
+           rounded-2xl border border-gray-200 bg-blue-300
            shadow-sm transition-all duration-300
            hover:-translate-y-1 hover:shadow-lg"
   >
