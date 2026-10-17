@@ -268,7 +268,162 @@ https://TU-USUARIO.github.io/vue-ts-project/
 
 Sustituye TU-USUARIO por tu usuario real de GitHub.
 
- 
+ - # <span style="color:yellow">Perfecto. Vamos a mantener las URLs limpias, sin #, en tu proyecto Vue 3 + TypeScript + Vite + Vue Router, y solucionar los errores 404 al recargar páginas en GitHub Pages.</span>
+
+
+Por ejemplo, tendrás estas direcciones:
+
+https://TU-USUARIO.github.io/vue-ts-project/
+
+https://TU-USUARIO.github.io/vue-ts-project/servicios
+
+https://TU-USUARIO.github.io/vue-ts-project/contacto
+
+> ## Seguiremos utilizando createWebHistory().
+
+
+### 1. Configura vite.config.ts
+Asegúrate de que base coincide con el nombre de tu repositorio.
+
+
+````typescript
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  base: '/vue-ts-project/',
+  plugins: [vue(), tailwindcss()],
+})
+````
+> Sustituye vue-ts-project por el nombre real de tu repositorio.
+
+
+### 2. Configura src/router/index.ts
+Mantén createWebHistory() y configura las rutas así:
+
+
+````typescript
+
+import { createRouter, createWebHistory } from 'vue-router'
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+
+  routes: [
+    {
+      path: '/',
+      component: () => import('../views/HomeView.vue'),
+    },
+    {
+      path: '/servicios',
+      component: () => import('../views/ServiciosView.vue'),
+    },
+    {
+      path: '/proyectos',
+      component: () => import('../views/ProyectosView.vue'),
+    },
+    {
+      path: '/nosotros',
+      component: () => import('../views/NosotrosView.vue'),
+    },
+    {
+      path: '/contacto',
+      component: () => import('../views/ContactoView.vue'),
+    },
+  ],
+
+  scrollBehavior() {
+    return { top: 0, left: 0 }
+  },
+})
+
+export default router
+
+````
+
+### 3. Crea public/404.html
+Este archivo permitirá recuperar la ruta cuando GitHub Pages no encuentre directamente una página solicitada.
+
+> #### Crea public/404.html con este contenido:
+
+````html
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirigiendo...</title>
+  </head>
+  <body>
+    <script>
+      const base = '/vue-ts-project/'
+      const path = window.location.pathname
+      const query = window.location.search
+      const hash = window.location.hash
+
+      const route = path.startsWith(base)
+        ? path.slice(base.length)
+        : path.replace(/^\/+/, '')
+
+      const target =
+        base +
+        '?/' +
+        route +
+        query.replace(/&/g, '~and~') +
+        hash
+
+      window.location.replace(target)
+    </script>
+  </body>
+</html>
+````
+
+- ## <span style="color:red">   Importante: sustituye /vue-ts-project/ por la ruta real de tu repositorio.</span>
+ Este archivo utiliza el mecanismo de redirección de la SPA, por lo que necesitaremos completar el siguiente paso para restaurar la URL original.
+
+
+### 4. Modifica index.html
+En el archivo index.html de la raíz del proyecto,
+ añade este script dentro de la etiqueta  <span style="color:red">    head  </span>, antes de cargar la aplicación:
+
+````js
+<script>
+  (function () {
+    const search = window.location.search
+
+    if (search.startsWith('?/')) {
+      const restored = search
+        .slice(2)
+        .replace(/~and~/g, '&')
+
+      const queryIndex = restored.indexOf('&')
+      const path = queryIndex === -1
+        ? restored
+        : restored.slice(0, queryIndex)
+
+      const query = queryIndex === -1
+        ? ''
+        : '?' + restored.slice(queryIndex + 1)
+
+      const base = '/vue-ts-project/'
+
+      window.history.replaceState(
+        null,
+        '',
+        base + path + query + window.location.hash
+      )
+    }
+  })()
+</script>
+
+````
+> ### Mantén el resto de tu index.html,
+> especialmente el elemento div con id="app" y el script de entrada de Vite. Usa el mismo valor de base en ambos archivos.
+
+
+
 - # <span style="color:yellow">Para subir los últimos cambios de tu proyecto Vue + TypeScript + Tailwind CSS a GitHub</span>
 
 >  abre la terminal de VS Code en la carpeta del proyecto y ejecuta estos comandos:

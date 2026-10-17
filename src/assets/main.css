@@ -2,6 +2,6 @@
 
 
   body {
-    @apply bg-gray-300 text-black ;
+    @apply bg-gray-400 text-black ;
     text-align: center;
   }
